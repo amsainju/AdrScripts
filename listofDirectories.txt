@@ -1,0 +1,4 @@
+/home/asainju/D1
+/home/asainju/D2
+/home/asainju/D3
+/home/asainju/D4
