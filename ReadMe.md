@@ -12,6 +12,6 @@ CreateJob code will create this file.
 
 # AdrParallelRunScript.sh
 It takes the number of processors as an argument and distributes each job in jobs.txt to different processors. 
-
+Currently, it assumes each *.dat file as a seperate job. 
 
 
