@@ -2,10 +2,7 @@
 # use chmod +x AdrParallelScript.sh
 #Takes 1 argument numberofProcessors 
 numberofProcessors=$1
-resume=$2
-export LD_LIBRARY_PATH=/home/asainju/MATLAB/R2018a/bin/glnxa64:$LD_LIBRARY_PATH
-./cj4 listofDirectories.txt $2 $1
-sleep 2
+export LD_LIBRARY_PATH=/YOUR_PATH/MATLAB/R2018a/bin/glnxa64:$LD_LIBRARY_PATH
 set -o monitor 
 # means: run background processes in a separate processes...
 trap add_next_job CHLD 
