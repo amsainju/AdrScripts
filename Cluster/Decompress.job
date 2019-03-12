@@ -1,0 +1,17 @@
+#!/bin/bash -l
+
+#SBATCH -q defq
+#SBATCH -N 1
+#SBATCH -n 32
+#SBATCH -J japan-project
+#SBATCH -o japan-project.%j.out
+#SBATCH -e japan-project.%j.error
+
+DATA_DIR=/data/Japan_Project_data/20181219
+
+hostname=$(hostname)
+nodeid=$(echo $hostname | cut -c8-9)
+jobstxt="jobs$nodeid.txt"
+
+./createjobs_decomp.sh $DATA_DIR
+./Decompress.sh 32 $jobstxt

@@ -71,11 +71,9 @@ int main(int argc, char**argv) {
 			fh = fopen("tempjoblist.txt", "r");
 			//read line by line
 			while (fgets(line, DEFAULT_PATH_LENGTH, fh) != NULL) {
-				if (strstr(line, "Channel") != NULL) { //verifying
 					strcpy(joblist[jobCounter], line);
 					jobCounter++;
 					jobinDirectoryCounter++;
-				}
 			}
 			end[directoryCounter] = jobCounter - 1;
 			jobInDirectoryCount[directoryCounter] = jobinDirectoryCounter;
@@ -91,7 +89,7 @@ int main(int argc, char**argv) {
 			completedJobs = completedJobs - numberofProcessor * 2;  //redo some constant number of completed jobs again. Some last jobs can be partially complete. 
 
 		}
-		printf("jobsProcessed = %d\n", completedJobs);
+		//printf("jobsProcessed = %d\n", completedJobs);
 		int index;
 		int counter = 0;
 		for (int i = 0; i<maxJobinDirectory; i++) {

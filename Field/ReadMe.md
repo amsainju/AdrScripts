@@ -13,7 +13,7 @@ Format:
 A program to create jobs for the AdrParallelRunScript.sh. 
 It takes listofDirectories.txt as an argument and creates jobs.txt as an output.
 ```
-$ gcc -o createjob createjob.c
+$ gcc -o createjob CreateJobs.c
 ```
 ```
 $ ./createjob listofDirectories.txt
@@ -54,12 +54,14 @@ $./AdrParallelRunScript.sh 15
 # ADR Code Compilation 
 Adr code can be downloaded from the following link:
 https://github.com/amsainju/adr
-Linux executable for Adr can be downloaded from Executables subdirectory. 
+Linux executable for Adr can be downloaded from binaries subdirectory. 
 Before you run the compilation command make sure libmat.so and libmx.so  are present in the same directory as adr.c adr.h and main.c. 
 ```
-$ export LD_LIBRARY_PATH=/YOUR_PATH/Matlab2018b/bin/glnxa64:$LD_LIBRARY_PATH
+$ export PATH=/YOUR_PATH/Matlab2018a/bin:$PATH
 
-$ gcc -L /YOUR_PATH/Matlab2018b/bin/glnxa64 -L /YOUR_PATH/Matlab2018b/sys/os/glnxa64 -I /YOUR_PATH/Matlab2018b/extern/include -o adr adr.c main.c -lm -lmat -lmx
+$ export LD_LIBRARY_PATH=/YOUR_PATH/Matlab2018a/bin/glnxa64:$LD_LIBRARY_PATH
+
+$ gcc -L /YOUR_PATH/Matlab2018a/bin/glnxa64 -L /YOUR_PATH/Matlab2018a/sys/os/glnxa64 -I /YOUR_PATH/Matlab2018a/extern/include -o adr adr.c main.c -lm -lmat -lmx
 ```
 
 

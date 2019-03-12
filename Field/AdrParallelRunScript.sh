@@ -2,7 +2,8 @@
 # use chmod +x AdrParallelScript.sh
 #Takes 1 argument numberofProcessors 
 numberofProcessors=$1
-export LD_LIBRARY_PATH=/YOUR_PATH/MATLAB/R2018a/bin/glnxa64:$LD_LIBRARY_PATH
+export PATH=/YOUR_PATH/Matlab2018a/bin:$PATH  #change to your path
+export LD_LIBRARY_PATH=/YOUR_PATH/Matlab2018a/bin/glnxa64:$LD_LIBRARY_PATH  #change to your path
 set -o monitor 
 # means: run background processes in a separate processes...
 trap add_next_job CHLD 
@@ -24,10 +25,16 @@ function add_next_job {
 }
 
 function do_job {
-    echo "starting job $1 $2 $3"
+    echo "starting job $1"
     STARTTIME=`date`
-    ./adr -i $1 $2 $3 
+    ./adr -i $1 -m 1 -r 3808  #may need to change the range gate value 
+    datfile=$1
+    datfile=${datfile::-4}
+    matextention='.mat'
+    matfile=$datfile$matextention 
+    nohup matlab -nodisplay -nodesktop -r "decompression('$matfile');exit"
     ENDTIME=`date`
+    echo "decompression job $matfile completed"
     echo $1 $2 $3 $STARTTIME $ENDTIME>> jobs.log
 }
 
@@ -40,6 +47,4 @@ done
 # wait for all jobs to complete
 wait
 echo "All jobs completed"
-
-
 
