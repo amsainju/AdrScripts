@@ -36,7 +36,17 @@ Format:
 ```
 
 # AdrParallelRunScript.sh
-It takes the number of processors as an argument and distributes each job in jobs.txt to different processors. Currently, it assumes each *.dat file as a separate job. 
+It takes four parameters:
+1. the number of processors
+2. filename with list of jobs
+3. directory containing xml file
+4. Short Mode Value for Adr code  (1 for CO, 3 for Japan and GreenLand Data)
+
+  This script distributes each job in job file to different processors. Currently, it assumes each *.dat file as a separate job.
+  The script does the following tasks:
+  1. convert .dat files to compressed .mat files
+  2. decompress .mat files.
+  
 Pre-requirements:
 1. Matlab 2018a/2018b
 
@@ -45,11 +55,12 @@ Open the AdrParallelRunScript.sh and replace "YOUR_PATH" with the Matlab Install
 ```
 export LD_LIBRARY_PATH=/YOUR_PATH/Matlab2018a/bin/glnxa64:$LD_LIBRARY_PATH
 ```
-AdrParallelRunScript.sh takes only one argument: the number of processors. Before you run the script make sure the jobs.txt file is in the same directory. 
+
 
 ```
-$./AdrParallelRunScript.sh 15
+$./AdrParallelRunScript.sh 15 jobs.txt /PATH/TO/XML 3
 ```
+where 15 is the number of processors, jobs.txt is the file with list of jobs, /PATH/TO/XML is path to the directory containing xml file to extract range (-r) value, 3 is short mode value
 
 # ADR Code Compilation 
 Adr code can be downloaded from the following link:
@@ -63,6 +74,18 @@ $ export LD_LIBRARY_PATH=/YOUR_PATH/Matlab2018a/bin/glnxa64:$LD_LIBRARY_PATH
 
 $ gcc -L /YOUR_PATH/Matlab2018a/bin/glnxa64 -L /YOUR_PATH/Matlab2018a/sys/os/glnxa64 -I /YOUR_PATH/Matlab2018a/extern/include -o adr adr.c main.c -lm -lmat -lmx
 ```
+
+#How to Run in Chronological Order
+1. create a file with list of directories path (listOfDirectories.txt)
+2. run createjob program
+```
+$./createjob listOfDirectories.txt
+```
+3. Run AdrParallelRunScript.sh
+```
+$./AdrParallelRunScript.sh 15 jobs.txt /PATH/TO/XML 3
+```
+
 
 
 

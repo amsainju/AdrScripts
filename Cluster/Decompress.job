@@ -7,11 +7,10 @@
 #SBATCH -o japan-project.%j.out
 #SBATCH -e japan-project.%j.error
 
-DATA_DIR=/data/Japan_Project_data/20181219
-
+dataDir=/data/Japan_Project_data/20181218
 hostname=$(hostname)
 nodeid=$(echo $hostname | cut -c8-9)
 jobstxt="jobs$nodeid.txt"
 
-./createjobs_decomp.sh $DATA_DIR
+./createjobs_decomp.sh $dataDir
 ./Decompress.sh 32 $jobstxt

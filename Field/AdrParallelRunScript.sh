@@ -1,15 +1,22 @@
 #! /usr/bin/env bash
 # use chmod +x AdrParallelScript.sh
-#Takes 1 argument numberofProcessors 
+#Takes 4 argument numberofProcessors , job file name, short mode, xml directory
 numberofProcessors=$1
+jobstxt=$2
+joblog=$(echo $jobstxt | cut -c1-6)-$(date +"%y%m%d-%H%M%S").adr.log
+dataDir=$3
+shortMode = $4
+xmlFile=$(ls $dataDir/*.xml | head -n 1)
+valueRange=$(sh ./extract_xml_linux.sh $xmlFile printRange)
 export PATH=/YOUR_PATH/Matlab2018a/bin:$PATH  #change to your path
 export LD_LIBRARY_PATH=/YOUR_PATH/Matlab2018a/bin/glnxa64:$LD_LIBRARY_PATH  #change to your path
+
 set -o monitor 
 # means: run background processes in a separate processes...
 trap add_next_job CHLD 
 # execute add_next_job when we receive a child complete signal
 
-readarray todo_array < jobs.txt
+readarray todo_array < $jobstxt
 index=0
 max_jobs=$numberofProcessors
 echo "Number of Process: " $max_jobs
@@ -27,7 +34,7 @@ function add_next_job {
 function do_job {
     echo "starting job $1"
     STARTTIME=`date`
-    ./adr -i $1 -m 1 -r 3808  #may need to change the range gate value 
+    ./adr -i $1 -m 1 -r $valueRange  -sm $shortMode 
     datfile=$1
     datfile=${datfile::-4}
     matextention='.mat'
@@ -35,7 +42,7 @@ function do_job {
     nohup matlab -nodisplay -nodesktop -r "decompression('$matfile');exit"
     ENDTIME=`date`
     echo "decompression job $matfile completed"
-    echo $1 $2 $3 $STARTTIME $ENDTIME>> jobs.log
+    echo $1 $STARTTIME $ENDTIME>> jobs.log
 }
 
 # add initial set of jobs

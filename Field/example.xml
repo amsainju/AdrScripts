@@ -1,0 +1,282 @@
+<!DOCTYPE systemXML>
+<system>
+   <configs>
+      <config type="adc-ad9680_0017">
+         <name>AdcConfig0</name>
+         <description></description>
+         <sampFreq>1200.000000</sampFreq>
+         <adcMode>2</adcMode>
+         <ddc0Adc>0</ddc0Adc>
+         <ddc1Adc>0</ddc1Adc>
+         <ddc0NcoMode>0</ddc0NcoMode>
+         <ddc1NcoMode>0</ddc1NcoMode>
+         <ddc0NcoFreq>250</ddc0NcoFreq>
+         <ddc1NcoFreq>300</ddc1NcoFreq>
+         <subChannels>
+            <subChannel>
+               <id>0</id>
+               <digRx>
+                  <modes>0</modes>
+                  <adcDdcChannel>0</adcDdcChannel>
+                  <bypass>0</bypass>
+                  <zeroPi>0</zeroPi>
+                  <ncoFreq>0</ncoFreq>
+                  <ncoPhase>0</ncoPhase>
+                  <decimation>2</decimation>
+               </digRx>
+               <digRx>
+                  <modes>1</modes>
+                  <adcDdcChannel>0</adcDdcChannel>
+                  <bypass>0</bypass>
+                  <zeroPi>1</zeroPi>
+                  <ncoFreq>0</ncoFreq>
+                  <ncoPhase>0</ncoPhase>
+                  <decimation>2</decimation>
+               </digRx>
+               <integrator>
+                  <modes>0:1</modes>
+                  <rstModes></rstModes>
+                  <numInt>200</numInt>
+                  <rg>1400:5207</rg>
+                  <shiftLSB>0</shiftLSB>
+                  <outputSelect>0</outputSelect>
+               </integrator>
+               <coefficients>-2639,   650,   5580,   4956,   -2234,   -4562,   3195,   7530,   -1873,   -9996,   23,   12794,   3149,   -15261,   -7593,   17087,   13401,   -17768,   -20479,   16789,   28599,   -13618,   -37362,   7754,   46182,   1220,   -54308,   -13597,   60804,   29468,   -64619,   -48712,   64584,   70923,   -59485,   -95395,   48110,   121110,   -29288,   -146707,   1941,   170497,   34900,   -190452,   -82119,   204182,   140592,   -208843,   -211381,   200951,   296148,   -175880,   -397987,   126738,   523336,   -41506,   -686878,   -105268,   926999,   383082,   -1373977,   -1083207,   2862960,   7162362,   7162362,   2862960,   -1083207,   -1373977,   383082,   926999,   -105268,   -686878,   -41506,   523336,   126738,   -397987,   -175880,   296148,   200951,   -211381,   -208843,   140592,   204182,   -82119,   -190452,   34900,   170497,   1941,   -146707,   -29288,   121110,   48110,   -95395,   -59485,   70923,   64584,   -48712,   -64619,   29468,   60804,   -13597,   -54308,   1220,   46182,   7754,   -37362,   -13618,   28599,   16789,   -20479,   -17768,   13401,   17087,   -7593,   -15261,   3149,   12794,   23,   -9996,   -1873,   7530,   3195,   -4562,   -2234,   4956,   5580,   650,   -2639</coefficients>
+               <coeffFilename></coeffFilename>
+            </subChannel>
+            <subChannel>
+               <id>1</id>
+               <coefficients>-2639,   650,   5580,   4956,   -2234,   -4562,   3195,   7530,   -1873,   -9996,   23,   12794,   3149,   -15261,   -7593,   17087,   13401,   -17768,   -20479,   16789,   28599,   -13618,   -37362,   7754,   46182,   1220,   -54308,   -13597,   60804,   29468,   -64619,   -48712,   64584,   70923,   -59485,   -95395,   48110,   121110,   -29288,   -146707,   1941,   170497,   34900,   -190452,   -82119,   204182,   140592,   -208843,   -211381,   200951,   296148,   -175880,   -397987,   126738,   523336,   -41506,   -686878,   -105268,   926999,   383082,   -1373977,   -1083207,   2862960,   7162362,   7162362,   2862960,   -1083207,   -1373977,   383082,   926999,   -105268,   -686878,   -41506,   523336,   126738,   -397987,   -175880,   296148,   200951,   -211381,   -208843,   140592,   204182,   -82119,   -190452,   34900,   170497,   1941,   -146707,   -29288,   121110,   48110,   -95395,   -59485,   70923,   64584,   -48712,   -64619,   29468,   60804,   -13597,   -54308,   1220,   46182,   7754,   -37362,   -13618,   28599,   16789,   -20479,   -17768,   13401,   17087,   -7593,   -15261,   3149,   12794,   23,   -9996,   -1873,   7530,   3195,   -4562,   -2234,   4956,   5580,   650,   -2639</coefficients>
+               <coeffFilename></coeffFilename>
+            </subChannel>
+         </subChannels>
+         <nbufs>128</nbufs>
+         <bufSize>8192</bufSize>
+      </config>
+      <config type="ctu_001B">
+         <name>CtuConfig0</name>
+         <description></description>
+         <mode>
+            <id>0</id>
+            <numSegments>0</numSegments>
+            <segmentTimes></segmentTimes>
+            <segmentStates></segmentStates>
+         </mode>
+         <mode>
+            <id>1</id>
+            <numSegments>0</numSegments>
+            <segmentTimes></segmentTimes>
+            <segmentStates></segmentStates>
+         </mode>
+         <nmea>
+            <input>30</input>
+         </nmea>
+         <pps>
+            <input>11</input>
+            <polarity>1</polarity>
+         </pps>
+         <pscIntr>
+            <input>0</input>
+            <polarity>0</polarity>
+         </pscIntr>
+      </config>
+      <config type="dac-ad9129_0012">
+         <name>DacConfig0</name>
+         <description></description>
+         <mode>
+            <id>0</id>
+            <invert>0</invert>
+            <delay>8.000000</delay>
+            <config type="dac-ad9129_0012_waveform">Waveform0</config>
+         </mode>
+         <mode>
+            <id>1</id>
+            <invert>1</invert>
+            <delay>8.000000</delay>
+            <config type="dac-ad9129_0012_waveform">Waveform0</config>
+         </mode>
+      </config>
+      <config type="dac-ad9129_0012_waveform">
+         <name>Waveform0</name>
+         <description></description>
+         <sampFreq>2400.000000</sampFreq>
+         <pulse>
+            <name>Pulse</name>
+            <centerFreq>850.000000</centerFreq>
+            <bandwidth>500.000000</bandwidth>
+            <initialDelay>0.000000</initialDelay>
+            <initialPhase>0.000000</initialPhase>
+            <afterPulseDelay>2.000000</afterPulseDelay>
+            <taper>Tukey</taper>
+            <alpha>0.050000</alpha>
+            <scale>1.000000</scale>
+            <numPoints>60000</numPoints>
+            <Filename></Filename>
+         </pulse>
+      </config>
+      <config type="daq_0001">
+         <name>DaqConfig0</name>
+         <description></description>
+         <globalName></globalName>
+         <globalDir></globalDir>
+         <auxDir>/home/admin/tmp_data</auxDir>
+         <recorder>
+            <name>Recorder0</name>
+            <dataSource>ARENA:XCVR0:digrx0</dataSource>
+            <fileName>MicrowaveRadar</fileName>
+            <fileCount>-1</fileCount>
+            <fileSize>64</fileSize>
+            <minSpace>10000</minSpace>
+            <fileStripe>/home/admin/tmp_data</fileStripe>
+         </recorder>
+         <recorder>
+            <name>Recorder1</name>
+            <dataSource>ARENA:XCVR1:digrx1</dataSource>
+            <fileName>Socket1</fileName>
+            <fileCount>-1</fileCount>
+            <fileSize>512</fileSize>
+            <minSpace>10000</minSpace>
+            <fileStripe>/home/admin/tmp_data</fileStripe>
+         </recorder>
+      </config>
+      <config type="psc_0003">
+         <name>PscConfig0</name>
+         <description></description>
+         <extAsyncTrigSelect>0</extAsyncTrigSelect>
+         <holdOnStartup>0</holdOnStartup>
+         <interruptibleOnStartup>0</interruptibleOnStartup>
+         <extJumpToIndex>0</extJumpToIndex>
+         <modulus>0</modulus>
+         <sequence type="primary">
+            <marker>0</marker>
+            <hold>0</hold>
+            <mode>0</mode>
+            <name></name>
+            <period>50.0</period>
+            <next>0</next>
+            <repeatTo>0</repeatTo>
+            <repeatCount>0</repeatCount>
+            <interruptible>0</interruptible>
+         </sequence>
+         <sequence type="primary">
+            <marker>0</marker>
+            <hold>0</hold>
+            <mode>0</mode>
+            <name></name>
+            <period>50.0</period>
+            <next>0</next>
+            <repeatTo>0</repeatTo>
+            <repeatCount>0</repeatCount>
+            <interruptible>0</interruptible>
+         </sequence>
+         <interruptEna>0</interruptEna>
+      </config>
+      <config type="socket">
+         <name>Socket0</name>
+         <description></description>
+         <multiFlag>0</multiFlag>
+         <ip>10.0.0.20</ip>
+         <port>55000</port>
+         <payloadSize>8192</payloadSize>
+      </config>
+      <config type="socket">
+         <name>Socket1</name>
+         <description></description>
+         <multiFlag>0</multiFlag>
+         <ip>10.0.0.20</ip>
+         <port>55001</port>
+         <payloadSize>8192</payloadSize>
+      </config>
+   </configs>
+   <subSystem>
+      <name>ARENA:CTU</name>
+      <interface type="nic">eth0</interface>
+      <port>10000</port>
+      <config type="psc_0003">PscConfig0</config>
+      <subSystem>
+         <name>CTU</name>
+         <fanSpeeds>20 20 20</fanSpeeds>
+         <config type="ctu_001B">CtuConfig0</config>
+      </subSystem>
+   </subSystem>
+   <subSystem>
+      <name>ARENA:XCVR0</name>
+      <interface type="nic">eth0</interface>
+      <port>10000</port>
+      <config type="psc_0001"></config>
+      <subSystem>
+         <name>awg0</name>
+         <disableSync>0</disableSync>
+         <dacClk>2400.000000</dacClk>
+         <mixMode>0</mixMode>
+         <desiredAlignMin>0</desiredAlignMin>
+         <desiredAlignMax>12</desiredAlignMax>
+         <dcoPhase>0</dcoPhase>
+         <config type="dac-ad9129_0012">DacConfig0</config>
+         <config type="ctu_0012"></config>
+      </subSystem>
+      <subSystem>
+         <name>digrx0</name>
+         <disableSync>0</disableSync>
+         <adcClk>2400.000000</adcClk>
+         <adcClkDivBy>1</adcClkDivBy>
+         <adcGainCh0>0</adcGainCh0>
+         <adcGainCh1>0</adcGainCh1>
+         <alignPhase>1</alignPhase>
+         <desiredAlignMin>-4</desiredAlignMin>
+         <desiredAlignMax>12</desiredAlignMax>
+         <config type="adc-ad9680_0017">AdcConfig0</config>
+         <dataOutput>
+            <config type="socket">Socket0</config>
+            <interface type="nic">eth0</interface>
+         </dataOutput>
+      </subSystem>
+   </subSystem>
+   <subSystem>
+      <name>ARENA:XCVR1</name>
+      <interface type="nic">eth0</interface>
+      <port>10000</port>
+      <config type="psc_0001"></config>
+      <subSystem>
+         <name>awg1</name>
+         <disableSync>0</disableSync>
+         <dacClk>2400.000000</dacClk>
+         <mixMode>0</mixMode>
+         <desiredAlignMin>0</desiredAlignMin>
+         <desiredAlignMax>12</desiredAlignMax>
+         <dcoPhase>0</dcoPhase>
+         <config type="dac-ad9129_0012">DacConfig0</config>
+         <config type="ctu_0012"></config>
+      </subSystem>
+      <subSystem>
+         <name>digrx1</name>
+         <disableSync>0</disableSync>
+         <adcClk>2400.000000</adcClk>
+         <adcClkDivBy>1</adcClkDivBy>
+         <adcGainCh0>0</adcGainCh0>
+         <adcGainCh1>0</adcGainCh1>
+         <alignPhase>1</alignPhase>
+         <desiredAlignMin>-8</desiredAlignMin>
+         <desiredAlignMax>8</desiredAlignMax>
+         <config type="adc-ad9680_0017">AdcConfig0</config>
+         <dataOutput>
+            <config type="socket">Socket1</config>
+            <interface type="nic">eth0</interface>
+         </dataOutput>
+      </subSystem>
+   </subSystem>
+   <subSystem>
+      <name>Clock Synth</name>
+      <interface type="nic">eth0</interface>
+      <port>1234</port>
+      <extRef>1</extRef>
+      <frequency>2400</frequency>
+   </subSystem>
+   <subSystem>
+      <name>Data Server</name>
+      <interface type="nic">eth0</interface>
+      <port>10000</port>
+      <config type="daq_0001">DaqConfig0</config>
+   </subSystem>
+</system>
+

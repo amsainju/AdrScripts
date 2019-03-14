@@ -1,9 +1,12 @@
 #! /usr/bin/env bash
-# use chmod +x AdrParallelScript.sh
-#Takes 1 argument numberofProcessors 
+# use chmod +x AdrParallelRunScript.sh
 numberofProcessors=$1
 jobstxt=$2
 joblog=$(echo $jobstxt | cut -c1-6)-$(date +"%y%m%d-%H%M%S").adr.log
+dataDir=$3
+shortMode=$4
+xmlFile=$(ls $dataDir/*.xml | head -n 1)
+valueRange=$(sh ./extract_xml_linux.sh $xmlFile printRange)
 
 export LD_LIBRARY_PATH=/home/.MATLAB/R2018a/bin/glnxa64:/home/.MATLAB/R2018a/sys/os/glnxa64:$LD_LIBRARY_PATH
 
@@ -30,7 +33,7 @@ function add_next_job {
 function do_job {
     echo "starting job $1 $2 $3"
     STARTTIME=`date`
-    ./adr -i $1 -m 1
+    ./adr -i $1 -m 1 -r $valueRange -sm $shortMode
     ENDTIME=`date`
     echo $1 $2 $3 $STARTTIME $ENDTIME>> $joblog
 }
@@ -44,6 +47,3 @@ done
 # wait for all jobs to complete
 wait
 echo "All jobs completed"
-
-
-
