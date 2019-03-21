@@ -39,7 +39,7 @@ Format:
 It takes four parameters:
 1. the number of processors
 2. filename with list of jobs
-3. directory containing xml file
+3. range gate value
 4. Short Mode Value for Adr code  (1 for CO, 3 for Japan and GreenLand Data)
 
   This script distributes each job in job file to different processors. Currently, it assumes each *.dat file as a separate job.
@@ -58,9 +58,9 @@ export LD_LIBRARY_PATH=/YOUR_PATH/Matlab2018a/bin/glnxa64:$LD_LIBRARY_PATH
 
 
 ```
-$./AdrParallelRunScript.sh 15 jobs.txt /PATH/TO/XML 3
+$./AdrParallelRunScript.sh 15 jobs.txt 13888 1
 ```
-where 15 is the number of processors, jobs.txt is the file with list of jobs, /PATH/TO/XML is path to the directory containing xml file to extract range (-r) value, 3 is short mode value
+where 15 is the number of processors, jobs.txt is the file with list of jobs, 13888 is the range gate value, 1 is short mode value
 
 # ADR Code Compilation 
 Adr code can be downloaded from the following link:
@@ -83,7 +83,7 @@ $./createjob listOfDirectories.txt
 ```
 3. Run AdrParallelRunScript.sh
 ```
-$./AdrParallelRunScript.sh 15 jobs.txt /PATH/TO/XML 3
+$./AdrParallelRunScript.sh 15 jobs.txt 13888 1
 ```
 
 

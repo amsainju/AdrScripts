@@ -4,10 +4,10 @@
 numberofProcessors=$1
 jobstxt=$2
 joblog=$(echo $jobstxt | cut -c1-6)-$(date +"%y%m%d-%H%M%S").adr.log
-dataDir=$3
-shortMode = $4
-xmlFile=$(ls $dataDir/*.xml | head -n 1)
-valueRange=$(sh ./extract_xml_linux.sh $xmlFile printRange)
+# dataDir=$3
+valueRange=$3 
+shortMode=$4
+
 export PATH=/YOUR_PATH/Matlab2018a/bin:$PATH  #change to your path
 export LD_LIBRARY_PATH=/YOUR_PATH/Matlab2018a/bin/glnxa64:$LD_LIBRARY_PATH  #change to your path
 
@@ -34,7 +34,7 @@ function add_next_job {
 function do_job {
     echo "starting job $1"
     STARTTIME=`date`
-    ./adr -i $1 -m 1 -r $valueRange  -sm $shortMode 
+    ./adr -i $1 -m 1 -sm $shortMode -r $valueRange 
     datfile=$1
     datfile=${datfile::-4}
     matextention='.mat'
